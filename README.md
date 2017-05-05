@@ -6,28 +6,16 @@
 
 消息处理
 ```
-use Runner\WechatAnswer\HandlerInterface;
+use Runner\WechatAnswer\AbstractHandler;
 use Runner\WechatAnswer\Dispatcher;
 use EasyWeChat\Message\News;
 
-class OrderHandler implements HandlerInterface
+class OrderHandler extends AbstractHandler
 {
 
-    /**
-     * @return string
-     */
-    public function name()
-    {
-        return '订单号查询';
-    }
-
-    /**
-     * @return string
-     */
-    public function description()
-    {
-        return '根据订单号查询订单, 例如: 订单123456';
-    }
+    protected $name = '订单号查询';
+    
+    protected $description = '根据订单号查询订单, 例如: 订单123456';
 
     /**
      * @param string $message

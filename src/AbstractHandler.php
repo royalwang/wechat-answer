@@ -7,7 +7,7 @@
 
 namespace Runner\WechatAnswer;
 
-abstract class AbstractHandler
+abstract class AbstractHandler implements HandlerInterface
 {
 
     protected $name;
@@ -35,11 +35,4 @@ abstract class AbstractHandler
      * @return bool
      */
     abstract public function match($message);
-
-    /**
-     * @param $message
-     * @param Dispatcher $dispatcher
-     * @return mixed
-     */
-    abstract public function handle($message, Dispatcher $dispatcher);
 }
